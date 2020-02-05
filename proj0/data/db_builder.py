@@ -1,8 +1,12 @@
 # db_builder is to be used to initialize the database 
 # with the tables for users, blogs, and entries.
+import os
+DIR = os.path.dirname(__file__)
+DIR += "/spew.db"
+
 import sqlite3
 
-db = sqlite3.connect("spew.db") # open if file exists, otherwise create
+db = sqlite3.connect(DIR) # open if file exists, otherwise create
 c = db.cursor()                 # facilitate db ops
 
 
